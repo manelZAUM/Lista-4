@@ -1,0 +1,63 @@
+package Conj;
+
+import java.util.Scanner;
+
+public class Main {
+	 static double impos(double sal, double salmed) {
+		 double saldesc=0;
+		 if(sal>(salmed*12)) {
+			  saldesc-=(sal*20)/100;
+		 
+		 } else if(sal>(salmed*5)) {
+			 saldesc-=(sal*8)/100;
+		 }else {
+			 saldesc=0;
+		 }
+		 
+		  return saldesc; 
+	 }
+	 
+	 static double ret(double sal, double dep) {
+		 double bonus=0;
+		 
+		 if(dep>0) {
+			bonus=(0.02*sal);
+			bonus=dep*bonus;
+		 }else {
+			 bonus=0;
+		 }
+		 
+		 return bonus;
+	 }
+	public static void main(String[] args) {
+		
+		//digitar o salario
+		Scanner sc=new Scanner(System.in);
+		System.out.println("DIGITE SEU SALARIO: ");
+		double salario=sc.nextDouble();
+		
+		//digitar salario minimo
+		System.out.println("DIGITE O VALOR DO SALÁRIO MINIMO: ");
+		double salmin=sc.nextDouble();
+		//digitar os dependentes
+		System.out.println("INFORME O NUMERO DE DEPENDENTES: ");
+		double dep=sc.nextInt();
+		
+		//Salario com desconto certo de 4 por cento
+		double saldesc=salario-((salario*4)/100);
+	    
+		if(salario>=(salmin)*5) {
+			saldesc-=impos(salario,salmin);
+			saldesc+=ret(salario,dep);
+		}
+		//SABER O QUANTO FOI DESCONTAADO
+		double desc=salario-saldesc;
+		
+	    System.out.println("SALARIO TOTAL: "+salario);
+	    System.out.printf("SALARIO (com desconto): %.2f",saldesc);
+	    System.out.printf("\nTOTAL Desc: %.2f",desc);
+		
+
+	}
+
+}
