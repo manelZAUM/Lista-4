@@ -1,0 +1,11 @@
+public class Ferramen {
+	
+	public String nome;
+	public double preco;
+	
+	public Ferramen(String nome, double preco) {
+		this.nome=nome;
+		this.preco=preco;
+	}
+
+}
