@@ -1,0 +1,140 @@
+public class MAIN {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Ferramen op1=new Ferramen("martelo",25.0);
+		Ferramen op2=new Ferramen("elevador",150.0);
+		Ferramen op3=new Ferramen("gerador",500.0);
+		int select;
+		int confnov;
+		System.out.println("OLA, BEM,VINDO A LOJA: INFORME O DIA DA SEMANA...");
+		String dia=sc.nextLine();
+		
+		//DIA DE PROMO
+		if(dia.equalsIgnoreCase("SEGUNDA") || dia.equalsIgnoreCase("TERCA") || dia.equalsIgnoreCase("QUINTA")) {
+			System.out.println("hoje e dia de oferta. VOCE GANHOU 40% DE DESCONTO");
+			System.out.println("ESCOLHA SUA OPCAO: ");
+			
+			System.out.println("1- "+op1.nome+" R$ "+op1.preco);
+			System.out.println("2- "+op2.nome+" R$ "+op2.preco);
+			System.out.println("3- "+op3.nome+" R$ "+op3.preco);
+			select=sc.nextInt();
+			
+			//PARA SELECIONAR UM DIA CECRTO
+			while(select< 1 || select > 3) {
+				System.out.println("OPCAO INVALIDA. ESCOLHA NOVAMENTE");
+				select=sc.nextInt();
+			}
+			
+			//SE FOR A UM
+			if(select==1) {
+				System.out.println("OPCAO ESCOLHIDA: "+op1.nome);
+				System.out.println("DESEJA UMA "+op1.nome+" NOVA ?(ACRESCIMO DE 15%)");
+				System.out.println("1- para sim ou 2- para nao");
+				confnov=sc.nextInt();
+				if(confnov==1) {
+					System.out.println("VALOR = R$ "+op1.preco);
+					System.out.println("TOTAL= VALOR + ACRESCIMO - (40%) ");
+					op1.preco=op1.preco+((op1.preco*25)/100);
+					System.out.println("TOTAL = R$ "+op1.preco);
+				}else {
+					System.out.println("VALOR = R$ "+op1.preco);
+					System.out.println("TOTAL= VALOR - (40%) ");
+					op1.preco=op1.preco-((op1.preco*40)/100);
+					System.out.println("TOTAL = R$ "+op1.preco);
+				}
+			//se for a dois	
+			}else if(select==2) {
+				System.out.println("OPCAO ESCOLHIDA: "+op2.nome);
+				System.out.println("DESEJA UMA "+op2.nome+" NOVA ?(ACRESCIMO DE 15%)");
+				confnov=sc.nextInt();
+				if(confnov==1) {
+					System.out.println("VALOR = R$ "+op2.preco);
+					System.out.println("TOTAL= VALOR + ACRESCIMO - (40%) ");
+					op2.preco=op2.preco+((op2.preco*25)/100);
+					System.out.println("TOTAL = R$ "+op2.preco);
+				}else {
+					System.out.println("VALOR = R$ "+op2.preco);
+					System.out.println("TOTAL= VALOR - (40%) ");
+					op2.preco=op2.preco-((op2.preco*40)/100);
+					System.out.println("TOTAL = R$ "+op2.preco);
+				}
+			//se for a 3	
+			}else {
+				System.out.println("OPCAO ESCOLHIDA: "+op3.nome);
+				System.out.println("DESEJA UMA "+op3.nome+" NOVA ?(ACRESCIMO DE 15%)");
+				confnov=sc.nextInt();
+				if(confnov==1) {
+					System.out.println("VALOR = R$ "+op3.preco);
+					System.out.println("TOTAL= VALOR + ACRESCIMO - (40%) ");
+					op3.preco=op3.preco+((op3.preco*25)/100);
+					System.out.println("TOTAL = R$ "+op3.preco);
+				}else {
+					System.out.println("VALOR = R$ "+op3.preco);
+					System.out.println("TOTAL= VALOR - (40%) ");
+					op3.preco=op3.preco-((op3.preco*40)/100);
+					System.out.println("TOTAL = R$ "+op3.preco);
+				}
+				
+			}
+		//dia sem promo
+		}else {
+			System.out.println("ESCOLHA SUA OPCAO: ");
+			
+			System.out.println("1- "+op1.nome+" R$ "+op1.preco);
+			System.out.println("2- "+op2.nome+" R$ "+op2.preco);
+			System.out.println("3- "+op3.nome+" R$ "+op3.preco);
+			select=sc.nextInt();
+			//SE FOR A UM
+			if(select==1) {
+				System.out.println("OPCAO ESCOLHIDA: "+op1.nome);
+				System.out.println("DESEJA UMA "+op1.nome+" NOVA ?(ACRESCIMO DE 15%)");
+				confnov=sc.nextInt();
+				if(confnov==1) {
+					System.out.println("VALOR = R$ "+op1.preco);
+					System.out.println("TOTAL= VALOR + ACRESCIMO - (40%) ");
+					op1.preco=op1.preco+((op1.preco*25)/100);
+					System.out.println("TOTAL = R$ "+op1.preco);
+				}else {
+					System.out.println("VALOR = R$ "+op1.preco);
+					System.out.println("TOTAL= VALOR - (40%) ");
+					op1.preco=op1.preco-((op1.preco*40)/100);
+					System.out.println("TOTAL = R$ "+op1.preco);
+				}
+			//se for a dois	
+			}else if(select==2) {
+				System.out.println("OPCAO ESCOLHIDA: "+op2.nome);
+				System.out.println("DESEJA UMA "+op2.nome+" NOVA ?(ACRESCIMO DE 15%)");
+				confnov=sc.nextInt();
+				if(confnov==1) {
+					System.out.println("VALOR = R$ "+op2.preco);
+					System.out.println("TOTAL= VALOR + ACRESCIMO - (40%) ");
+					op2.preco=op2.preco+((op2.preco*25)/100);
+					System.out.println("TOTAL = R$ "+op2.preco);
+				}else {
+					System.out.println("VALOR = R$ "+op2.preco);
+					System.out.println("TOTAL= VALOR - (40%) ");
+					op2.preco=op2.preco-((op2.preco*40)/100);
+					System.out.println("TOTAL = R$ "+op2.preco);
+				}
+			//se for a 3	
+			}else {
+				System.out.println("OPCAO ESCOLHIDA: "+op3.nome);
+				System.out.println("DESEJA UMA "+op3.nome+" NOVA ?(ACRESCIMO DE 15%)");
+				confnov=sc.nextInt();
+				if(confnov==1) {
+					System.out.println("VALOR = R$ "+op3.preco);
+					System.out.println("TOTAL= VALOR + ACRESCIMO +15 ");
+					op3.preco=op3.preco+((op3.preco*15)/100);
+					System.out.println("TOTAL = R$ "+op3.preco);
+				}else {
+					System.out.println("VALOR = R$ "+op3.preco);
+					System.out.println("TOTAL= VALOR + (40%) ");
+					op3.preco=op3.preco;
+					System.out.println("TOTAL = R$ "+op3.preco);
+				}
+				
+		}
+		
+	}
+   }
