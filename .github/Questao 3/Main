@@ -1,0 +1,54 @@
+public class Main {
+
+	public static void main(String[] args) {
+		
+		int vet[]=new int[100];
+        int vetposit[]=new int[vet.length];
+        
+		double num = Math.random();
+        int myRandInt = (int)(num*100+1);
+		int es3pos[]=new int[vet.length];
+        int nao3neg[]=new int[vet.length];
+		int nao3pos[]=new int[vet.length];
+		int es3neg[]=new int[vet.length];
+		
+        //criar numeros aleatorios de 1 a 100
+		for(int i=0;i<vet.length;i++) {
+			num = Math.random();
+			myRandInt = (int)(num*100+1);
+			vet[i]=myRandInt;
+			System.out.println(vet[i]);
+			
+			if(vet[i]%3==0 && vet[i] > 0) {
+				es3pos[i]=vet[i];
+			
+			}else if(vet[i]>0 && vet[i]%3!=0) {
+				
+				nao3pos[i]=vet[i];
+				
+			
+			}else if(vet[i]<0 && vet[i]%3==0){
+				es3neg[i]=vet[i];
+			
+			}else {
+				nao3neg[i]=vet[i];
+			}
+		}
+		
+		for(int i=0;i<vet.length;i++) {
+			System.out.print(" Positivos multiplos: "+es3pos[i]);
+			System.out.print("\n");
+			System.out.print(" Positivos nao multiplos: "+nao3pos[i]);
+			System.out.print("\n");
+			System.out.print(" Positivos nao multiplos: "+es3neg[i]);
+			System.out.print("\n");
+			System.out.print(" Positivos nao multiplos: "+nao3neg[i]);
+		}
+		
+
+	}
+	
+	
+
+
+}
