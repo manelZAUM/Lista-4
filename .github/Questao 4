@@ -1,4 +1,4 @@
-age NEW;
+package NEW;
 import java.util.Scanner;
 
 
