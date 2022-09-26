@@ -1,0 +1,69 @@
+age NEW;
+import java.util.Scanner;
+
+
+public class Mainn {
+	
+	public static int vogais(String txt, String Cons ) {
+		
+		int contarvog=0;
+		int contarconso=0;
+		txt.toLowerCase();
+		
+		if(Cons.equalsIgnoreCase("VOGAL")) {
+		for (int i = 0; i < txt.length(); i++){
+	            char c = txt.charAt(i);
+	            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+	                contarvog++;
+	        }
+		  return contarvog;
+		  
+		}else{
+			for (int i = 0; i < txt.length(); i++){
+	            
+				char c = txt.charAt(i);
+	            if (c != 'a' || c != 'e' || c != 'i' || c != 'o' || c != 'u')
+	                contarconso++;
+	        }
+		}   
+		return contarconso;
+	}	
+	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		int conso=0;
+		int vog=0;
+		
+		System.out.println("DIGITE O TAMANHO DO VETOR: ");
+			int t=sc.nextInt();
+		String vetor[]=new String[t];
+		int consoo[]=new int[vetor.length];
+		int vogg[]=new int [vetor.length];
+		
+		System.out.println("PREENCHA O SCANNER: ");
+		
+		for(int i=0;i<vetor.length;i++) {
+			vetor[i]=sc.next();
+		}
+		
+		for(int i=0;i<vetor.length;i++) {
+			conso=vogais(vetor[i],"VOGAL");
+			
+			vog=vogais(vetor[i],"CONSO");
+			
+			consoo[i]=conso;
+			vogg[i]=vog;
+			
+		}
+		
+		for(int i=0;i<vetor.length;i++) {
+			System.out.println("CONFIRA A QUANTIDADE EM CADA INSTANCIA: ");
+			
+			System.out.println("linha "+i+" CONSOANTE : TOTAL "+consoo[i]);
+			System.out.println("linha "+i+" CONSOANTE : TOTAL "+vogg[i]);
+		}
+	
+	}
+
+}
