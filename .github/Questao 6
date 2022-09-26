@@ -1,0 +1,37 @@
+package NEW;
+import java.util.Scanner;
+public class Main_6 {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		
+		System.out.println("DIGIGTE (em grama) a massa radioativa: ");
+		double massa=sc.nextDouble();
+		int temp,hora,min,seg;
+		seg=0;
+		min=0;
+		hora=0;
+		
+		for(temp=0;massa>0.5;temp++) {
+			
+			if(seg==50) {
+				massa=massa*(1/2);
+			}else if(seg==60){
+				min=+1;
+				seg=0;
+			}
+			
+			if(min==60) {
+				hora=+1;
+				seg=0;
+			}
+			
+			seg++;
+		}
+		
+		System.out.println("TEMPO NECESSARIO PARA CHEGAR A INFERIOR DE 0,5 GRAMAS FOI: ");
+		System.out.println(hora+" Horas. "+min+" Minutos, "+seg+" Segundos");
+
+	}
+
+}
