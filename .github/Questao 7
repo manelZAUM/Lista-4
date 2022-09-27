@@ -1,0 +1,31 @@
+package NEW;
+import java.util.Scanner;
+
+public class main_7 {
+
+	public static StringBuilder rev(String n) {
+		
+		String str = n;
+		System.out.println(str);
+		StringBuilder dest = new StringBuilder();
+		for (int i = (str.length() - 1); i >= 0; i--){
+			dest.append(str.charAt(i));
+		}
+		
+		
+		return dest;
+		
+	}
+	public static void main(String[] args) {
+	
+		Scanner sc=new Scanner(System.in);
+		System.out.println("DIGITE UMA PALAVRA: ");
+		
+		String nome=sc.nextLine();
+		StringBuilder nn=rev(nome);
+		
+		System.out.println(nn);
+
+	}
+
+}
